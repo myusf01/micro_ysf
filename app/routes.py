@@ -7,4 +7,15 @@ from flask import render_template
 
 def index():
     user = {"username":"Velid"}
-    return render_template("index.html", title='Home', user=user)
+    posts = [
+        {
+            'author':{'username': 'Velid'},
+            'body':'You beautyy!'
+        },
+        {
+            'author':{'username': 'Els'},
+            'body':'Yeaap!'
+        }
+    ]
+
+    return render_template("index.html", title='Home', user=user,posts=posts)
